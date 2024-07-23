@@ -24,6 +24,8 @@ def github_clone_single(username, name_repo):
 
     os.chdir(owner_dir)
 
+    print(f"🚀 \033[32m{repo_dir}\033[0m")
+
     if os.path.isdir(repo_dir):
         print(f"{repo_dir} already exists.")
     else:
