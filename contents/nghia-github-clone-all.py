@@ -5,13 +5,19 @@ import requests
 
 
 def get_github_repos(username):
-    url = f'https://api.github.com/users/{username}/repos'
-    response = requests.get(url)
-    if response.status_code == 200:
-        repos = response.json()
-        return [repo['name'] for repo in repos]
-    else:
-        return None
+    repos = []
+    page = 1
+    while True:
+        url = f'https://api.github.com/users/{username}/repos?page={page}&per_page=100'
+        response = requests.get(url)
+        if response.status_code != 200:
+            return None
+        page_repos = response.json()
+        if not page_repos:
+            break
+        repos.extend([repo['name'] for repo in page_repos])
+        page += 1
+    return repos
 
 
 def github_clone_single(username, name_repo):
