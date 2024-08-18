@@ -1,6 +1,5 @@
 import os
 import subprocess
-# pip install requests
 import requests
 
 
@@ -33,7 +32,8 @@ def github_clone_single(username, name_repo):
     print(f"🚀 \033[32m{repo_dir}\033[0m")
 
     if os.path.isdir(repo_dir):
-        print(f"{repo_dir} already exists.")
+        # print(f"{repo_dir} already exists.")
+        pass
     else:
         # SSH clone
         subprocess.run(['git', 'clone', ssh_link])
@@ -62,8 +62,8 @@ if __name__ == "__main__":
         # "vuvannghia452002",
     ]
 
-    print(f"👉 Step: github_clone_all")
+    # print(f"👉 Step: github_clone_all")
 
     for username in list_username:
-        print(f"🚀username = {username}")
+        # print(f"🚀username = {username}")
         github_clone_all(username)
