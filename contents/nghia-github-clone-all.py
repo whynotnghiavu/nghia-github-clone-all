@@ -44,6 +44,9 @@ def github_clone_all(username):
     github_repos = get_github_repos(username)
 
     if github_repos:
+
+        print(github_repos)
+
         for i in range(len(github_repos)):
             github_clone_single(username, github_repos[i])
     else:
