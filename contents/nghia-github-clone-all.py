@@ -56,8 +56,7 @@ def github_clone_all(username):
 if __name__ == "__main__":
 
     list_username = [
-        "whynotnghiavu",
-        # "company20206205",
+        "whynotnghiavu", 
         # "20206205",
 
         # "vvn20206205",
